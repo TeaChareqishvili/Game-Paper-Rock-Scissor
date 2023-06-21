@@ -1,0 +1,42 @@
+.game-wrapper{
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    background-color:#182547;
+}
+
+.score-wrapper{
+    border:solid #4f637d 4px;
+    border-radius:12px;
+    padding:30px;
+    width:60%;
+    margin: 40px auto;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+
+    div{
+        background-color:#f9f9f9;
+        border-radius:7px;
+        padding:20px;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        width:20%;
+        height:20%;
+    }
+    p{
+        color:#5468ca;
+        font-size:1.2rem;
+        letter-spacing: 1.1px;
+        font-weight: bold;
+    }
+
+    h3{
+        font-size:2.5rem;
+        font-weight: bold;
+        color:#4f637d;
+    }
+}
