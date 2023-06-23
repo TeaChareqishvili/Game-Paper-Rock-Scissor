@@ -3,6 +3,7 @@ import { Rock } from "../gameComponents/Rock";
 import { Scissors } from "../gameComponents/Scissors";
 import { useState } from "react";
 import "./Styles.scss";
+import { CompChoise } from "./CompChoise";
 
 const GameButtons = () => {
   const [choose, setChoose] = useState(true);
@@ -30,7 +31,7 @@ const GameButtons = () => {
       )}
       {chosenOption &&(
         <>
-          {chosenOption === "paper" &&  <Paper />}
+          {chosenOption === "paper" && <><Paper /> <CompChoise/></> }
           {chosenOption === "rock" && <Rock />}
           {chosenOption === "scissors" && <Scissors />}
         </>
