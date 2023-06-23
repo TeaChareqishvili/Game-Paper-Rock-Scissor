@@ -24,7 +24,7 @@ const Main = () => {
         <button onClick={() => setRules(true)}>Rules</button>
       </div>
       {rules && <Rules setRules={setRules} />}
-      {game && <Game/>}
+      {game && <Game setGame={setGame}/>}
     </div>
   );
 };

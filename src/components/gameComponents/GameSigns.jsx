@@ -1,14 +1,12 @@
-import { Paper } from "../gameComponents/Paper";
-import { Rock } from "../gameComponents/Rock";
-import { Scissors } from "../gameComponents/Scissors";
+
 import "./Styles.scss";
 
 const GameSigns = () => {
   return (
     <div className="sign-wrapper">
-      <Paper />
-      <Rock />
-      <Scissors />
+      <img className="paper-img" src="icon-paper.svg" alt="paper" />
+      <img className="rock-img" src="icon-rock.svg" alt="rock" />
+      <img className="scissors-img" src="icon-scissors.svg" alt="scissors" />
     </div>
   );
 };

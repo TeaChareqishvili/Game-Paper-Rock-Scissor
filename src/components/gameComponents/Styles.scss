@@ -5,6 +5,7 @@
     align-items: center;
     justify-content: space-evenly;
     margin-top:40px;
+
 }
 
 .paper{
@@ -12,16 +13,38 @@
    padding:40px 50px;
    border-radius:50%;
    border: 15px solid #5771f3; 
+   cursor: pointer;
 }
+.paper-img{
+    background-color:#e0e0e0;
+    padding:40px 50px;
+    border-radius:50%;
+    border: 15px solid #5771f3; 
+   
+ }
 
 .rock{
    background-color:#e0e0e0;
    padding:50px 55px;
    border-radius:50%;
    border: 15px solid #df405e; 
+   cursor: pointer;
 }
+.rock-img{
+    background-color:#e0e0e0;
+    padding:50px 55px;
+    border-radius:50%;
+    border: 15px solid #df405e; 
+ }
 
 .scissors{
+    background-color:#e0e0e0;
+    padding:40px 50px;
+    border-radius:50%;
+    border: 15px solid #eca823; 
+    cursor: pointer;
+}
+.scissors-img{
     background-color:#e0e0e0;
     padding:40px 50px;
     border-radius:50%;
