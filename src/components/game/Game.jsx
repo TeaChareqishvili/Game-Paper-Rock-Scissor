@@ -6,6 +6,8 @@ import { Main } from "../main/Main";
 const Game = ({setGame})=>{
 
     const [back, setBack] = useState(false)
+    const user = 0;
+    const comp = 0;
 
     return (
        <div className="game-wrapper">
@@ -16,11 +18,11 @@ const Game = ({setGame})=>{
          <div className="score-wrapper">
            <div className="score">
             <p>You</p>
-            <h3>0</h3>
+            <h3>{user}</h3>
            </div>
            <div className="score">
             <p>Computer</p>
-            <h3>0</h3>
+            <h3>{comp}</h3>
            </div>
          </div>
          <div>
@@ -28,10 +30,6 @@ const Game = ({setGame})=>{
          </div>
        
          
-       {/* <div className="spots">
-        <div className="spot"></div>
-        <div className="spot"></div>
-       </div> */}
      
        </div>
     )

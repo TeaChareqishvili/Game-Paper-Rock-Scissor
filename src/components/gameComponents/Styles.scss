@@ -6,8 +6,17 @@
     justify-content: space-evenly;
     margin-top:40px;
 
-}
+   .btn{
+    background-color: #182547;
+    cursor:none;
+    border:none;
 
+   }
+
+   .btn:hover{
+    background-color: #182547;
+}
+}
 .paper{
    background-color:#e0e0e0;
    padding:40px 50px;

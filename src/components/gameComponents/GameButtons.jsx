@@ -11,29 +11,47 @@ const GameButtons = () => {
 
   const handleChoice = (choice) => {
     setChosenOption(choice);
-    setChoose(false)
+    setChoose(false);
   };
 
   return (
     <>
       {choose && (
         <div className="sign-wrapper">
-          <button onClick={() => handleChoice("paper")}>
+          <button className="btn" onClick={() => handleChoice("paper")}>
             <Paper />
           </button>
-          <button onClick={() => handleChoice("rock")}>
+          <button className="btn" onClick={() => handleChoice("rock")}>
             <Rock />
           </button>
-          <button onClick={() => handleChoice("scissors")}>
+          <button className="btn" onClick={() => handleChoice("scissors")}>
             <Scissors />
           </button>
         </div>
       )}
-      {chosenOption &&(
+      {chosenOption && (
         <>
-          {chosenOption === "paper" && <><Paper /> <CompChoise/></> }
-          {chosenOption === "rock" && <Rock />}
-          {chosenOption === "scissors" && <Scissors />}
+          {chosenOption === "paper" && (
+            <div className="sign-wrapper">
+              <Paper /> 
+              <button>Play Again</button>
+              <CompChoise />
+              </div>
+          )}
+          {chosenOption === "rock" && (
+            <div  className="sign-wrapper">
+              <Rock /> 
+              <button>Play Again</button>
+              <CompChoise />
+            </div>
+          )}
+          {chosenOption === "scissors" && (
+            <div  className="sign-wrapper">
+              <Scissors />
+              <button>Play Again</button>
+               <CompChoise />
+            </div>
+          )}
         </>
       )}
     </>
