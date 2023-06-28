@@ -15,8 +15,9 @@ const Main = () => {
           <p>PAPER</p>
           <p>SCISSORS</p>
         </div>
-        <div>
-          <button onClick={() =>setGame(true)}>Start Game</button>
+        <div className="buttons">
+          <button onClick={() =>setGame(true)}>One Player</button>
+          <button>Two Players</button>
         </div>
       </div>
       <GameSigns />
