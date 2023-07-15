@@ -3,11 +3,13 @@ import { Rock } from "../gameComponents/Rock";
 import { Scissors } from "../gameComponents/Scissors";
 import { useEffect, useState,useCallback } from "react";
 import "./Styles.scss";
+import { PopUp } from "../popUp/PopUp";
 
-const GameButtons = ({ user, setComp, comp, setUser }) => {
+const GameButtons = ({ comp,user,setComp, setUser }) => {
   const [choose, setChoose] = useState(false);
   const [chosenOption, setChosenOption] = useState(null);
   const [compChoice, setcompChoice] = useState(null);
+  const [newGame, setNewGame] = useState(false)
   
 
   const optionComponents = {
@@ -30,15 +32,41 @@ const GameButtons = ({ user, setComp, comp, setUser }) => {
     setcompChoice(null);
   };
 
+
+
   const User = useCallback(() => {
-    setUser(prevUser => prevUser + 1);
+    setUser(prevComp => {
+      const updatedComp = prevComp + 1;
+      if (updatedComp === 3) {
+        console.log('user wins');
+        setNewGame(true)
+      }
+      return updatedComp;
+    });
+   
   }, [setUser]);
   
   const Comp = useCallback(() => {
-    setComp(prevUser => prevUser + 1);
+    setComp(prevComp => {
+      const updatedComp = prevComp + 1;
+      if (updatedComp === 3) {
+        console.log('comp wins');
+       setNewGame(true)
+      }
+      return updatedComp;
+    });
   }, [setComp]);
   
   
+  
+
+  // const Both = useCallback(() => {
+  //   setComp(prevUser => prevUser + 1);
+  //   setUser(prevUser => prevUser + 1);
+  // }, [setComp,setUser]);
+  
+
+
   useEffect(() => {
     if (choose) {
       if (
@@ -47,16 +75,18 @@ const GameButtons = ({ user, setComp, comp, setUser }) => {
         (chosenOption === "paper" && compChoice === 0)
       ) {
           User()
-        console.log("user wins +1 to user", compChoice);
+       
       } else if (
         (chosenOption === "scissors" && compChoice === 0) ||
         (chosenOption === "paper" && compChoice === 2) ||
         (chosenOption === "rock" && compChoice === 1)
       ) {
         Comp()
-        console.log("comp wins +1 to comp", compChoice);
+      
       } else {
-        console.log("draw", compChoice);
+      // 
+      console.log('nia')
+      
       }
     }
   }, [choose, compChoice, chosenOption,Comp,User]);
@@ -84,9 +114,10 @@ const GameButtons = ({ user, setComp, comp, setUser }) => {
               <Rock />
             )}
           </div>
-          <div className="play-again">
+          {newGame ? <PopUp setNewGame={setNewGame}/> :  <div className="play-again">
             <button onClick={() => handlePlayAgain()}>Play Again</button>
-          </div>
+          </div>}
+         
         </>
       ) : (
         <div className="sign-wrapper">

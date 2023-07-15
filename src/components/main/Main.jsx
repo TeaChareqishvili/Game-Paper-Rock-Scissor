@@ -3,6 +3,7 @@ import "./MainStyles.scss";
 import { useState } from "react";
 import { Rules } from "../gameRules/Rules";
 import { Game } from "../game/Game";
+
 const Main = () => {
   const [rules, setRules] = useState(false);
   const [game, setGame] = useState(false);
