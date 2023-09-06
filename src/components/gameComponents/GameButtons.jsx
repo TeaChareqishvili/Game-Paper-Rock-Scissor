@@ -5,11 +5,13 @@ import { useEffect, useState,useCallback } from "react";
 import "./Styles.scss";
 import { PopUp } from "../popUp/PopUp";
 
-const GameButtons = ({ comp,user,setComp, setUser }) => {
+
+const GameButtons = ({ comp,user,setComp, setUser, setGame }) => {
   const [choose, setChoose] = useState(false);
   const [chosenOption, setChosenOption] = useState(null);
   const [compChoice, setcompChoice] = useState(null);
   const [newGame, setNewGame] = useState(false)
+
   
 
   const optionComponents = {
@@ -58,14 +60,6 @@ const GameButtons = ({ comp,user,setComp, setUser }) => {
   }, [setComp]);
   
   
-  
-
-  // const Both = useCallback(() => {
-  //   setComp(prevUser => prevUser + 1);
-  //   setUser(prevUser => prevUser + 1);
-  // }, [setComp,setUser]);
-  
-
 
   useEffect(() => {
     if (choose) {
@@ -84,14 +78,19 @@ const GameButtons = ({ comp,user,setComp, setUser }) => {
         Comp()
       
       } else {
-      // 
-      console.log('nia')
+      
+   
       
       }
     }
   }, [choose, compChoice, chosenOption,Comp,User]);
 
+  const finalResult = [comp, user]
 
+  localStorage.setItem('finalResult', JSON.stringify(finalResult));
+  const retrievedResult = JSON.parse(localStorage.getItem('finalResult'));
+
+console.log("results", retrievedResult)
 
   return (
     <>
@@ -114,8 +113,8 @@ const GameButtons = ({ comp,user,setComp, setUser }) => {
               <Rock />
             )}
           </div>
-          {newGame ? <PopUp setNewGame={setNewGame}/> :  <div className="play-again">
-            <button onClick={() => handlePlayAgain()}>Play Again</button>
+          {newGame ? <PopUp setNewGame={setNewGame} setGame={setGame}/> :  <div className="play-again">
+            <button className="play-again-btn" onClick={() => handlePlayAgain()}>Play Again</button>
           </div>}
          
         </>

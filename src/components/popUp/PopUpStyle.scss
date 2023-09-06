@@ -8,4 +8,37 @@
     display:flex;
     justify-content: center;
     align-items: center;
+
+    .popup{
+        background-color: aliceblue;
+        padding:30px 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border:2px solid #5771f3;
+        border-radius: 5px;
+
+        p{
+            padding: 10px;
+            font-size:1.5rem;
+            color:#5771f3;
+            font-weight:bold;
+        }
+        .pop-btn{
+            background-color: #5771f3;
+            color:aliceblue;
+            width:150px;
+            border: none;
+            border-radius: 5px;
+            font-size:1rem;
+            font-weight:bold;
+            cursor: pointer;
+            padding:15px 20px;
+            margin:10px 0 ;
+        }
+        .pop-btn:hover{
+            background-color: #36479c;
+        }
+    }
 }

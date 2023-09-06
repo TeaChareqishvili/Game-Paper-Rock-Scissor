@@ -11,7 +11,7 @@ const Game = ({ setGame }) => {
   return (
     <div className="game-wrapper">
       <div className="back">
-        <button onClick={() => setBack(true)}>Back</button>
+        <button className="back-btn" onClick={() => setBack(true)}>Back</button>
         {back && <Main /> && setGame(false)}
       </div>
       <div className="score-wrapper">
@@ -30,6 +30,7 @@ const Game = ({ setGame }) => {
           comp={comp}
           setUser={setUser}
           setComp={setComp}
+          setGame={setGame}
         />
       </div>
     </div>

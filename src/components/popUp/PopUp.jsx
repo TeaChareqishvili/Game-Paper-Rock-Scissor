@@ -1,19 +1,24 @@
 import "./PopUpStyle.scss";
 import { NavLink } from "react-router-dom";
 
+const PopUp = ({ setNewGame, setGame }) => {
+  const handleNewGame = () => {
+    setGame(false);
+    setNewGame(false);
+  };
 
-const PopUp = () => {
   return (
     <>
       <div className="popupwrapper">
         <div className="popup">
-          <p>Do Yo want to save this results?</p>
-          <button>Yes</button> 
-        <nav>
-          <NavLink to="/">
-            <button>No</button>
+          <p>Do You want to save this result?</p>
+          <NavLink to="/gamehistory">
+            <button className="pop-btn">Yes</button>
           </NavLink>
-          </nav>
+
+          <button className="pop-btn" onClick={() => handleNewGame()}>
+            No
+          </button>
         </div>
       </div>
     </>

@@ -17,13 +17,13 @@ const Main = () => {
           <p>SCISSORS</p>
         </div>
         <div className="buttons">
-          <button onClick={() =>setGame(true)}>One Player</button>
-          <button>Two Players</button>
+          <button className="players" onClick={() =>setGame(true)}>One Player</button>
+          <button className="players">Two Players</button>
         </div>
       </div>
       <GameSigns />
       <div className="rules">
-        <button onClick={() => setRules(true)}>Rules</button>
+        <button className="players" onClick={() => setRules(true)}>Rules</button>
       </div>
       {rules && <Rules setRules={setRules} />}
       {game && <Game setGame={setGame}/>}
